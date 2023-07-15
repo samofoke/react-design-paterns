@@ -1,13 +1,63 @@
-import SplitScreen from "./components/split-screen/Splitscreen";
-import LeftComponent from "./components/left/left";
-import RightComponent from "./components/right/right";
+import ListItems from "./components/list-items/list-items";
+import FirstPerson from "./components/people/person-list-item";
+import SecondPerson from "./components/people/second-person-list-item";
+
+const people = [
+  {
+    name: "John Doe",
+    age: 54,
+    hairColor: "brown",
+    hobbies: ["swimming", "bicycling", "video games"],
+  },
+  {
+    name: "Brenda Smith",
+    age: 33,
+    hairColor: "black",
+    hobbies: ["golf", "mathematics"],
+  },
+  {
+    name: "Jane Garcia",
+    age: 27,
+    hairColor: "blonde",
+    hobbies: ["biology", "medicine", "gymnastics"],
+  },
+];
+
+const products = [
+  {
+    name: "Flat-Screen TV",
+    price: "$300",
+    description: "Huge LCD screen, a great deal",
+    rating: 4.5,
+  },
+  {
+    name: "Basketball",
+    price: "$10",
+    description: "Just like the pros use",
+    rating: 3.8,
+  },
+  {
+    name: "Running Shoes",
+    price: "$120",
+    description: "State-of-the-art technology for optimum running",
+    rating: 4.2,
+  },
+];
 
 function App() {
   return (
-    <SplitScreen leftWeight={2} rightWeight={3}>
-      <LeftComponent />
-      <RightComponent />
-    </SplitScreen>
+    <>
+      <ListItems
+        items={people}
+        resourceName="person"
+        itemComponent={FirstPerson}
+      />
+      <ListItems
+        items={people}
+        resourceName="person"
+        itemComponent={SecondPerson}
+      />
+    </>
   );
 }
 
